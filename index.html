@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+    <head>
+        <title>TJ Email Setup</title>
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+        <link href="style.css" rel="stylesheet" type="text/css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+        <script>
+        $(document).ready(function() {
+            $(".step").hide();
+            $(".step").first().show().addClass("current");
+            $("#controls").show();
+            $("#all").click(function() {
+                $("#controls").hide();
+                $(".step").show();
+            });
+            $("#next").click(function() {
+                var cur = $(".step.current");
+                var next = cur.next(".step");
+                if (next.length) {
+                    cur.removeClass("current").hide();
+                    next.show().addClass("current");
+                }
+                if (!next.next(".step").length) {
+                    $("#next").hide();
+                }
+            });
+        });
+        </script>
+    </head>
+    <body>
+        <h3>TJ Email Setup</h3>
+        <div id="content">
+            <p>This guide will teach you how to set up your TJ email with <a href="https://www.mozilla.org/en-US/thunderbird/">Thunderbird</a>. If you have any problems with this guide, please email <b>sysadmins@lists.tjhsst.edu</b>.</p>
+            <div id="slides">
+                <div class="step">
+                    <p><b>1.</b> Download Thunderbird by navigating <a href="https://www.mozilla.org/en-US/thunderbird/">here</a> and clicking the green button.</p>
+                    <img src="images/screenshot1.png" />
+                </div>
+                <div class="step">
+                    <p><b>2.</b> Run the installer and follow the instructions. Start up Thunderbird after it is installed.</p>
+                    <img src="images/screenshot2.png" />
+                </div>
+                <div class="step">
+                    <p><b>3.</b> Click the "Skip this and use my existing email" button after Thunderbird starts up.</p>
+                    <img src="images/screenshot3.png" />
+                </div>
+                <div class="step">
+                    <p><b>4.</b> Enter your TJ email for the email address field and your webmail password for the password field. Press "<u>C</u>ontinue" after you have filled out these fields.</p>
+                    <img src="images/screenshot4.png" />
+                </div>
+                <div class="step">
+                    <p><b>5.</b> Change all of the settings you see in the red box to the ones in the screenshot below. Press "Re-<u>t</u>est" and then "<u>D</u>one". The "<u>D</u>one" button will be disabled until you press "Re-<u>t</u>est".</p>
+                    <img src="images/screenshot5.png" />
+                </div>
+                <div class="step">
+                    <p><b>6.</b> Thats it! You should be able to access your email now.</p>
+                    <img src="images/screenshot6.png" />
+                </div>
+            </div>
+            <div id="controls">
+                <button id="all">Show All Steps</button> <button id="next">Next Step</button>
+            </div>
+        </div>
+    </body>
+</html>
